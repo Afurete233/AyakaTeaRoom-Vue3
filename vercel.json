@@ -1,6 +1,6 @@
 {
     "rewrites": [{
         "source": "/api/(.*)",
-        "destination": "/app.age-api.com:8443/v2/$1"
+        "destination": "https://app.age-api.com:8443/v2/"
     }]
 }
