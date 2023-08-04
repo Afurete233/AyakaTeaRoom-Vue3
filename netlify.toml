@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/api/"
-  to = "https://app.age-api.com:8443/v2"
+  to = "https://www.baidu.com"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
