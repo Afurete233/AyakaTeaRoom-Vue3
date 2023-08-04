@@ -1,6 +1,6 @@
 {
     "proxy": {
-        "/api/": {
+        "/api/*": {
             "target": "https://app.age-api.com:8443/v2/",
             "pathRewrite": {
                 "^/api": ""
