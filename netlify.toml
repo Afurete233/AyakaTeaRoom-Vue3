@@ -1,2 +1,2 @@
 /api/*
-  Access-Control-Allow-Origin: https://app.age-api.com:8443/v2
+  Access-Control-Allow-Origin: https://app.age-api.com:8443/v2/
