@@ -73,7 +73,7 @@
 
 <script>
 import AltConnectVue from "./AltConnect.vue";
-import WeekTab from "./Weektab.vue"
+import WeekTab from "./WeekTab.vue"
 import axios from "axios";
 import DefaultData from "./DefaultData.vue";
 import Info_box from "./info.vue";
