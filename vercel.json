@@ -1,0 +1,5 @@
+{
+    "rewrites": [
+        { "source": "/api", "destination": "https://app.age-api.com:8443/v2/" }
+    ]
+}
