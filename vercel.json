@@ -1,5 +1,5 @@
 {
     "rewrites": [
-        { "source": "/proxy/:match/:url*/", "destination": "https://:match/:url*/" }
+        { "source": "/api/", "destination": "https://app.age-api.com:8443/v2/" }
     ]
 }
