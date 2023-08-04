@@ -30,7 +30,7 @@ const acg_type = [
 ];
 
 // const age_api = "https://v2.age-api.com:8443/v2/";
-const age_api = "https://ayakatearoom.vercel.app/proxy/app.age-api.com:8443/v2/";
+const age_api = "/proxy/app.age-api.com:8443/v2/";
 
 const acg_web_url = {
   acgfun: "https://www.agemys.vip/",
