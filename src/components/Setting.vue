@@ -36,9 +36,9 @@
       </transition-group>
     </el-col>
     <el-col :span="10">
-      <el-card :body-style="{ padding: '0px' }" :key="0">
+      <!-- <el-card :body-style="{ padding: '0px' }" :key="0">
         <one-drive></one-drive>
-      </el-card>
+      </el-card> -->
       <el-card :body-style="{ padding: '0px' }" :key="1">
         <el-upload class="upload-demo" action="#" :on-exceed="handleExceed" :on-error="handlesuccess"
           :on-success="handlesuccess" multiple :limit="1">
@@ -60,8 +60,8 @@
           <h5>--{{ item.updatetime }}--</h5>
           <h5>版本:{{ item.version }}</h5>
           <h5 v-for="deleteit in item.info_delete">移除:{{ deleteit }}</h5>
-          <h5 v-for="fixit in item.info_fix">移除:{{ fixit }}</h5>
-          <h5 v-for="addit in item.info_add">移除:{{ addit }}</h5>
+          <h5 v-for="fixit in item.info_fix">修复:{{ fixit }}</h5>
+          <h5 v-for="addit in item.info_add">新增:{{ addit }}</h5>
         </div>
 
       </el-card>

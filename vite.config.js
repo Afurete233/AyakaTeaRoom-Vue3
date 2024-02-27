@@ -17,10 +17,10 @@ export default defineConfig({
         }
     },
     server: {
-        https: {
-            key: fs.readFileSync('keys/127.0.0.1-key.pem'),
-            cert: fs.readFileSync('keys/127.0.0.1.pem'),
-        },
+        // https: {
+        //     key: fs.readFileSync('keys/127.0.0.1-key.pem'),
+        //     cert: fs.readFileSync('keys/127.0.0.1.pem'),
+        // },
         proxy: {
             '/api': {
                 target: 'https://ageapi.omwjhz.com:18888/v2',
