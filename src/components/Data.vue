@@ -39,7 +39,7 @@
         </span>
       </el-col>
     </transition-group>
-    <el-dialog :title="acgdata.Title" v-model="dialogacgweb" :modal-append-to-body='false'>
+    <el-dialog :title="acgdata.Title" v-model="dialogacgweb" :modal-append-to-body='false' :destroy-on-close="true">
       <AltConnectVue :acgdata="acgdata"> </AltConnectVue>
     </el-dialog>
     <el-col>
@@ -310,6 +310,10 @@ export default {
     },
   },
   mounted() {
+
+
+    // DefaultData.morejump("https://app.age-api.com:8443/v2/update?page=1&size=30");
+
     var _this = this;
     axios.get
       (DefaultData.age_api + this.Data_type + "?page=1&size=20", { dataType: "application/text" })

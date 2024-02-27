@@ -1,5 +1,7 @@
 <script type="text/javascript">
 
+
+
 const acg_colos = [
   "#e62d73",
   "#0089ff",
@@ -28,8 +30,8 @@ const acg_type = [
   "黑名单",
   "正在看",
 ];
-
 // const age_api = "https://v2.age-api.com:8443/v2/";
+// const age_api = "http://mcmlqs.top:60011/api/";
 const age_api = "/api/";
 
 const acg_web_url = {
@@ -107,7 +109,7 @@ import axios from "axios";
 const loadweek = function () {
   var _this = this;
   axios
-    .get(age_api + "home-list", { headers: {"Content-Type": "*"} })
+    .get(age_api + "home-list", { headers: { "Content-Type": "*" } })
     .then((response) => {
       _this.saveweeknew = response.data.week_list[new Date().getDay()];
 
@@ -126,6 +128,9 @@ const loading_acg_url_json = function () {
     });
 }
 
+const loading_Notice = await axios
+  .get("/public/Notice.json")
+
 const isNew = function (AID) {
   for (let index = 0; index < this.saveweeknew.length; index++) {
 
@@ -140,6 +145,7 @@ const isNew = function (AID) {
 
 export default {
   loadweek,
+  loading_Notice,
   loading_acg_url_json,
   old_acg_url,
   isNew,

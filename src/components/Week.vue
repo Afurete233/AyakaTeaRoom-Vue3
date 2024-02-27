@@ -77,7 +77,7 @@ import WeekTab from "./WeekTab.vue"
 import axios from "axios";
 import DefaultData from "./DefaultData.vue";
 import Info_box from "./info.vue";
-import { h } from 'vue';
+// import { h } from 'vue';
 
 
 export default {

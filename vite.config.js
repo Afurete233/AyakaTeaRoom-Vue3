@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import fs from 'fs';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,9 +17,13 @@ export default defineConfig({
         }
     },
     server: {
+        https: {
+            key: fs.readFileSync('keys/127.0.0.1-key.pem'),
+            cert: fs.readFileSync('keys/127.0.0.1.pem'),
+        },
         proxy: {
             '/api': {
-                target: 'https://app.age-api.com:8443/v2',
+                target: 'https://ageapi.omwjhz.com:18888/v2',
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, ""),
             },

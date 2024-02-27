@@ -433,6 +433,146 @@
   dependencies:
     "@floating-ui/core" "^1.3.1"
 
+"@hw-agconnect/api-types@1.5.1", "@hw-agconnect/api-types@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/api-types/-/api-types-1.5.1.tgz#d65ee85a11a9edad386728738a72a15ea7c2dcdc"
+  integrity sha512-DG1kt8zNmkKl4XC5iiw0filX0vJSk09lktCfPweKobz1t8ykWfDXpfWD5AUodAAoMdWl/D9LoEpDclJIPZ/hfQ==
+
+"@hw-agconnect/api@1.5.1", "@hw-agconnect/api@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/api/-/api-1.5.1.tgz#0ce9eac4b1b7dc66ae96af09e27c64b6d3e447fa"
+  integrity sha512-Ujb1l/39Qn07/++8nkyQx9ZuPmRk51YpR7odth/r5+PJBa7LX/Ebczkj+cPEgnzR8b5rDmlLCjjRqa0CarD9Uw==
+  dependencies:
+    "@hw-agconnect/api-types" "1.5.1"
+
+"@hw-agconnect/auth-types@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/auth-types/-/auth-types-1.5.1.tgz#0e4ce8943910aeee39fed55d65b9c13b3d46ab0f"
+  integrity sha512-1Bwe68f7L9mQJqKDNgdVMAV1aG9XrkWqDhYdzk3iRM4xCPmPghi2jzoUlF1j1Zb2kCNtiJjk3wx6hplUPmjxJQ==
+
+"@hw-agconnect/auth@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/auth/-/auth-1.5.1.tgz#26b3a3f19cad48e8903293344e4d51fc1cf169a1"
+  integrity sha512-JtNIJMeB58BbmVxf76iIciLIPkuz7rmCVUuNm3W3WJ0Wb+6E3NXjUOFhCaD1tGeI8VX3Ltz6dJtYHcMsY1WjFg==
+  dependencies:
+    "@hw-agconnect/api" "^1.5.1"
+    "@hw-agconnect/api-types" "^1.5.1"
+    "@hw-agconnect/auth-types" "1.5.1"
+    "@hw-agconnect/baseservice" "1.5.1"
+    "@hw-agconnect/baseservice-types" "1.5.1"
+    "@hw-agconnect/core" "^1.5.1"
+    "@hw-agconnect/instance" "^1.5.1"
+    "@hw-agconnect/instance-types" "^1.5.1"
+    "@hw-agconnect/log" "^1.5.1"
+    "@hw-agconnect/network" "1.5.1"
+    "@hw-agconnect/network-types" "1.5.1"
+    "@hw-agconnect/storage" "1.5.1"
+    "@hw-agconnect/storage-types" "1.5.1"
+    "@hw-agconnect/util" "1.5.1"
+
+"@hw-agconnect/baseservice-types@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/baseservice-types/-/baseservice-types-1.5.1.tgz#a58770b222dc6b906e2db55e28ffb276b07d7f99"
+  integrity sha512-gAKmGhOZMzBQuSYu3TQr6AqI2mWtD8CKcUMG3GnysRGvOWOE/+S8zJUy5Eb1CpzrqR1ScyRF1jCUCN/5PdM3+g==
+
+"@hw-agconnect/baseservice@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/baseservice/-/baseservice-1.5.1.tgz#9909eadea29c6a77dda3cb98b29d682f39aac9f9"
+  integrity sha512-KllAnFyLcfiyMW3KcmI8yIS1tbenOX1AG13PtqnGb/dsCyU/BAS626UdwHP3Ag71Gmh8KEh7pVw48kh18E4DZA==
+  dependencies:
+    "@hw-agconnect/api" "^1.5.1"
+    "@hw-agconnect/api-types" "^1.5.1"
+    "@hw-agconnect/baseservice-types" "1.5.1"
+    "@hw-agconnect/core" "^1.5.1"
+    "@hw-agconnect/instance" "^1.5.1"
+    "@hw-agconnect/instance-types" "^1.5.1"
+    "@hw-agconnect/log" "^1.5.1"
+    "@hw-agconnect/network" "1.5.1"
+    "@hw-agconnect/network-types" "1.5.1"
+    "@hw-agconnect/storage" "1.5.1"
+    "@hw-agconnect/storage-types" "1.5.1"
+
+"@hw-agconnect/core@1.5.1", "@hw-agconnect/core@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/core/-/core-1.5.1.tgz#df04fac81dd95eb62cc2714f6f412c4854122e8e"
+  integrity sha512-St7gFLtvqjkVJtnG53tPe5qGeLdlF+mdt0BTznQgF3tJC3CeQ4j1P+KBaTOCbMWCd9lPBwH6kUiesgCOhPvp/A==
+
+"@hw-agconnect/instance-types@1.5.1", "@hw-agconnect/instance-types@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/instance-types/-/instance-types-1.5.1.tgz#b8fa443f1551b3189d0c5031a14943586983afbd"
+  integrity sha512-zYdPXl9BIPajl/P8C4grvuRiY+6tIh7OSuv1QyWANBmbg1aLob9LNGFzrpvDw4CxrV4VPrYL3iKpWnfgruIZMQ==
+
+"@hw-agconnect/instance@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/instance/-/instance-1.5.1.tgz#bb17c0268326561b758190ee4b0dabf2468ad4e8"
+  integrity sha512-V9KRZfS0y70wYBDU8WPlLvONJaVNhO1ev8yy9JSGq8zNZJeZrILm9RJO8DhulOR8F4Y+6g8ccSArWH/dX0RgkA==
+  dependencies:
+    "@hw-agconnect/api" "1.5.1"
+    "@hw-agconnect/api-types" "1.5.1"
+    "@hw-agconnect/core" "1.5.1"
+    "@hw-agconnect/instance-types" "1.5.1"
+    "@hw-agconnect/log" "1.5.1"
+
+"@hw-agconnect/log@1.5.1", "@hw-agconnect/log@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/log/-/log-1.5.1.tgz#b23e6b5e83d980ddbe628bfab9338a408c5b42b3"
+  integrity sha512-8FRyiP68KQeJ+3pI+/xNSHiGw7UTMsgBdmteHeJrYJas1U+5RG74CuHUxhwFjEa3iwNan46VaCNLaSrgMehyww==
+  dependencies:
+    "@hw-agconnect/api" "1.5.1"
+    "@hw-agconnect/api-types" "1.5.1"
+    "@hw-agconnect/instance-types" "1.5.1"
+
+"@hw-agconnect/network-types@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/network-types/-/network-types-1.5.1.tgz#14491b4361cea696f365d7974e21e05c8ca7cf35"
+  integrity sha512-b3EWvBHB81J0KBhtbEZxJndp82TSLtnx8ePBjBJqKnodbM/hmkUn7pKTZLswSrQshGIZe6ixFpJj0kE5piP0iA==
+
+"@hw-agconnect/network@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/network/-/network-1.5.1.tgz#b0fd7abca167c49fe5553b63c863770e47e2a2fe"
+  integrity sha512-Kz94N2qhHB0HPLf3sCzbCENQ239bxb7QSfC9AwicAXJzZFbUabUVITfxKvGPzfiDs/YgpeIjKH1MvsOWoKSLpg==
+  dependencies:
+    "@hw-agconnect/api" "^1.5.1"
+    "@hw-agconnect/api-types" "^1.5.1"
+    "@hw-agconnect/instance" "^1.5.1"
+    "@hw-agconnect/instance-types" "^1.5.1"
+    "@hw-agconnect/log" "^1.5.1"
+    "@hw-agconnect/network-types" "1.5.1"
+    axios "0.27.2"
+    ua-parser-js "1.0.34"
+
+"@hw-agconnect/storage-types@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/storage-types/-/storage-types-1.5.1.tgz#acea9a0a247b0cc1631ee798d02b591172973ccf"
+  integrity sha512-Lwn2kXQGKm27kr8Gmz2M9pPnI/zNe9h05kgMMIwZwq0/9x29Eswa8wgy8cynTk1MdAbuhwkCLn+cxPTZ3CwIvA==
+
+"@hw-agconnect/storage@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/storage/-/storage-1.5.1.tgz#c7785b020d6365ce049bba8eea47d779d671a4af"
+  integrity sha512-1SABDBlBaKonFqkI7k44jK5JD0rfT4Z5sJR/qvJUiOjIygFGdFmZdrJDr5QQam1VrcQPMoLkMzSDrWT8bfuCwg==
+  dependencies:
+    "@hw-agconnect/api" "^1.5.1"
+    "@hw-agconnect/api-types" "^1.5.1"
+    "@hw-agconnect/core" "^1.5.1"
+    "@hw-agconnect/instance" "^1.5.1"
+    "@hw-agconnect/instance-types" "^1.5.1"
+    "@hw-agconnect/log" "^1.5.1"
+    "@hw-agconnect/storage-types" "1.5.1"
+
+"@hw-agconnect/util@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/@hw-agconnect/util/-/util-1.5.1.tgz#60634f45b3b4fd128ef8be2076fcd0b8f6e79e1f"
+  integrity sha512-PksnWW/I+4u+0fGf9cRP3RmCc5ziiXI4KOB/5KgPzX/RvhpVLbqaUhoiyotbsCqm3LpiV/G6SJJTp1isS1EmcA==
+  dependencies:
+    "@hw-agconnect/api" "^1.5.1"
+    "@hw-agconnect/api-types" "^1.5.1"
+    "@hw-agconnect/core" "^1.5.1"
+    "@hw-agconnect/instance" "^1.5.1"
+    "@hw-agconnect/instance-types" "^1.5.1"
+    "@hw-agconnect/log" "^1.5.1"
+    "@hw-agconnect/storage" "1.5.1"
+    "@hw-agconnect/storage-types" "1.5.1"
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://registry.npmmirror.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"
@@ -746,6 +886,14 @@ asynckit@^0.4.0:
   resolved "https://registry.npmmirror.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
 
+axios@0.27.2:
+  version "0.27.2"
+  resolved "https://registry.npmmirror.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
+  integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
+  dependencies:
+    follow-redirects "^1.14.9"
+    form-data "^4.0.0"
+
 axios@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmmirror.com/axios/-/axios-1.4.0.tgz#38a7bf1224cd308de271146038b551d725f0be1f"
@@ -973,6 +1121,11 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
+follow-redirects@^1.14.9:
+  version "1.15.5"
+  resolved "https://registry.npmmirror.com/follow-redirects/-/follow-redirects-1.15.5.tgz#54d4d6d062c0fa7d9d17feb008461550e3ba8020"
+  integrity sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==
+
 follow-redirects@^1.15.0:
   version "1.15.2"
   resolved "https://registry.npmmirror.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
@@ -986,6 +1139,11 @@ form-data@^4.0.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
+
+fs@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.npmmirror.com/fs/-/fs-0.0.1-security.tgz#8a7bd37186b6dddf3813f23858b57ecaaf5e41d4"
+  integrity sha512-3XY9e1pP0CVEUCdj5BmfIZxRBTSDycnbqhIOGec9QYtmVH2fbLpj86CFWkrNOkt/Fvty4KZG5lTglL9j/gJ87w==
 
 fsevents@~2.3.2:
   version "2.3.2"
@@ -1362,6 +1520,11 @@ tsml@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/tsml/-/tsml-1.0.1.tgz#89f8218b9d9e257f47d7f6b56d01c5a4d2c68fc3"
   integrity sha512-3KmepnH9SUsoOVtg013CRrL7c+AK7ECaquAsJdvu4288EDJuraqBlP4PDXT/rLEJ9YDn4jqLAzRJsnFPx+V6lg==
+
+ua-parser-js@1.0.34:
+  version "1.0.34"
+  resolved "https://registry.npmmirror.com/ua-parser-js/-/ua-parser-js-1.0.34.tgz#b33f41c415325839f354005d25a2f588be296976"
+  integrity sha512-K9mwJm/DaB6mRLZfw6q8IMXipcrmuT6yfhYmwhAkuh+81sChuYstYA+znlgaflUPaYUa3odxKPKGw6Vw/lANew==
 
 update-browserslist-db@^1.0.11:
   version "1.0.11"

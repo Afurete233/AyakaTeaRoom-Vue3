@@ -1,67 +1,54 @@
 <template>
   <div class="login-wrap">
-    <el-form class="login-container" v-if="!islogin">
+    <el-form class="login-container">
       <h1 class="title">用户登录</h1>
       <el-form-item>
-        <el-input
-          type="text"
-          placeholder="用户账号"
-          v-model="username"
-          autocomplete="off"
-        ></el-input>
+        <el-input type="text" placeholder="邮箱" v-model="username" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-input
-          type="password"
-          placeholder="用户密码"
-          v-model="password"
-          autocomplete="off"
-        ></el-input>
+        <el-input type="password" placeholder="密码" v-model="password" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="doLogin" style="width: 100%"
-          >登录</el-button
-        >
+        <el-button type="primary" @click="login" style="width: 100%">登录</el-button>
       </el-form-item>
     </el-form>
-    <el-row v-if="islogin" style="margin-top: 10px">
-      <input type="file" id="profilePhotoFileUpload" multiple="multiple" />
-      <el-button type="primary" icon="el-icon-refresh-right" @click="updata">
-        同步</el-button
-      >
-    </el-row>
   </div>
 </template>
  
 <script>
+import { getCurrentInstance } from 'vue';
 export default {
   name: "Login_",
-  data: function () {
+  setup() {
+    const instance = getCurrentInstance();
+    if (instance) {
+      const agconnect = instance.appContext.config.globalProperties.$agconnect
+      const login = async () => {
+        try {
+          await agconnect.auth().signInAnonymously().then(() => {
+            alert('login successfully!')
+          }).catch(() => {
+            return Promise.reject('sign in anonymously failed')
+          })
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+
+
+      return {
+        login
+      };
+    }
+  },
+  data() {
     return {
-      islogin: this.Cookies.get() != null ? true : false,
       username: "",
       password: "",
     };
   },
   methods: {
-    doLogin: function () {
-      let username = this.username;
-      let password = this.password;
-      /* let params={
-        } */
-      this.Bmob.User.login(username, password)
-        .then((res) => {
-          console.log(res);
-          this.islogin = true;
-          this.Cookies.set(username, res, { expires: 30 });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    updata() {
-        
-},
   },
 };
 </script>
