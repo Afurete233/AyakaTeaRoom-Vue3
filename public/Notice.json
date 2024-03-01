@@ -1,4 +1,13 @@
 [{
+        "updatetime": "2024/3/2",
+        "version": "Ayaka_TeaRoomV3.8",
+        "info_delete": [
+            "视频列表可以在本站点开了"
+        ],
+        "info_fix": [],
+        "info_add": []
+    },
+    {
         "updatetime": "2023/7/29",
         "version": "Ayaka_TeaRoomV3.7",
         "info_delete": [
