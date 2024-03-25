@@ -1,14 +1,24 @@
 # AyakaTeaRoom-Vue3
 
-This template should help get you started developing with Vue 3 in Vite.
+# 白鷺茶室 Vue3版本
 
-## Recommended IDE Setup
+#一个高效追番工具
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+这里是未打包Vue项目
 
-## Customize configuration
+拖动番剧卡片操作：
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+向右为添加喜欢
+
+向下为添加已看完
+
+向上为添加未看完
+
+向左为添加准备看
+
+向右下角为不想看
+
+向左下角为黑名单
 
 ## Project Setup
 
