@@ -14,7 +14,7 @@
               acgdata = item;
               acgdata.AID = item.id;
               acgdata.Title = item.name
-              ">
+                ">
                 <a target="_blank">
                   <el-card draggable="false" style="border: none" :body-style="{
                     padding: '0px',
@@ -28,7 +28,8 @@
                           padding: '0px',
                         }">
                           <div style="position: relative">
-                            <img draggable="false" :src="item.cover" class="image" width="100%" :onerror="defalutLogoUrl"
+                            <img draggable="false" :src="item.cover" class="image" width="100%"
+                              :onerror="defalutLogoUrl"
                               style="border-radius: 3px 3px 0px 0px;aspect-ratio: 150 / 208;" />
                             <transition-group v-if="reload" name="el-fade-in-linear">
                               <img src="../assets/heart.svg" v-if="ishow(item.id)" id="love" />
@@ -77,7 +78,7 @@ import WeekTab from "./WeekTab.vue"
 import axios from "axios";
 import DefaultData from "./DefaultData.vue";
 import Info_box from "./info.vue";
-// import { h } from 'vue';
+import { h } from 'vue';
 
 
 export default {
@@ -112,13 +113,9 @@ export default {
     var _this = this;
     this.nownum = 0;
     this.MAXnum = 5;
-
-    axios
-      .get(DefaultData.age_api + "home-list")
+    window.queryData(DefaultData.age_api + "home-list")
       .then((response) => {
-        _this.save = response.data.week_list;
-
-
+        _this.save = response.response.week_list;
 
         this.$nextTick(() => {
           this.NowRuning = false;
@@ -130,6 +127,23 @@ export default {
         this.errored = true;
       })
       .finally(() => (this.loading = false));
+    // axios
+    //   .get(DefaultData.age_api + "home-list")
+    //   .then((response) => {
+    //     _this.save = response.data.week_list;
+
+
+
+    //     this.$nextTick(() => {
+    //       this.NowRuning = false;
+    //       _this.loding();
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     this.errored = true;
+    //   })
+    //   .finally(() => (this.loading = false));
 
     setTimeout(function () {
       if (_this.NowRuning) _this.autoadd();
@@ -387,10 +401,10 @@ export default {
     },
     getimg(index) {
       var _this = this;
-      axios
-        .get(DefaultData.age_api + "detail/" + index)
+      window.queryData
+        (DefaultData.age_api + "detail/" + index)
         .then((response) => {
-          _this.showdata = _this.showdata.concat(response.data.video);
+          _this.showdata = _this.showdata.concat(response.response.video);
           this.runstart(this.showdata, 0);
         })
         .catch((error) => {
@@ -398,6 +412,17 @@ export default {
           this.errored = true;
         })
         .finally(() => (this.loading = false));
+      // axios
+      //   .get(DefaultData.age_api + "detail/" + index)
+      //   .then((response) => {
+      //     _this.showdata = _this.showdata.concat(response.data.video);
+      //     this.runstart(this.showdata, 0);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //     this.errored = true;
+      //   })
+      //   .finally(() => (this.loading = false));
     },
   },
 };

@@ -8,6 +8,9 @@ import fs from 'fs';
 // https://vitejs.dev/config/
 export default defineConfig({
     disableHostCheck: true,
+    build: {
+        target: 'es2022',
+    },
     base: process.env.NODE_ENV === 'production' ? './' : '/',
     plugins: [vue(), vueJsx()],
     resolve: {

@@ -54,10 +54,10 @@
               :key="index"></el-tab-pane>
           </el-tabs>
         </el-col>
-        <el-card v-for="(item, index) in  playlists " :key="index" style="margin-left: 10px;margin-right: 10px;
+        <el-card v-for="(item, index) in playlists " :key="index" style="margin-left: 10px;margin-right: 10px;
           padding-bottom: 15px;" v-show="item != '' && tabnum == index">
           <el-row>
-            <el-col v-for="(citem, num) in  item " :key="num" :xs="24" :sm="12" :md="8">
+            <el-col v-for="(citem, num) in item " :key="num" :xs="24" :sm="12" :md="8">
               <a target="_blank" :href='check_vip(index) ? player_jx.zj : player_jx.vip + citem[1]'
                 referrerPolicy="no-referrer">
                 <el-button type="primary" plain style="height: 50px;">
@@ -125,19 +125,34 @@ export default {
         this.acgdata.Title = this.acgdata.name;
       }
 
-      axios
-        .get(DefaultData.age_api + "detail/" + index)
+      // axios
+      //   .get(DefaultData.age_api + "detail/" + index)
+      //   .then((response) => {
+
+      //     _this.imgURL = response.data.video.cover;
+      //     _this.acgdata.NewTitle = response.data.video.uptodate;
+
+      //     _this.player_jx = response.data.player_jx;
+      //     _this.playlists = response.data.video.playlists;
+      //     _this.player_label_arr = response.data.player_label_arr;
+      //     _this.player_vip = response.data.player_vip;
+      //     _this.tabnum = Object.keys(response.data.video.playlists)[0];
+      //     _this.plot_arr = response.data.video.plot_arr;
+      //     // .replace("http:","https:").split("https://")
+      //   });
+
+      window.queryData(DefaultData.age_api + "detail/" + index)
         .then((response) => {
 
-          _this.imgURL = response.data.video.cover;
-          _this.acgdata.NewTitle = response.data.video.uptodate;
+          _this.imgURL = response.response.video.cover;
+          _this.acgdata.NewTitle = response.response.video.uptodate;
 
-          _this.player_jx = response.data.player_jx;
-          _this.playlists = response.data.video.playlists;
-          _this.player_label_arr = response.data.player_label_arr;
-          _this.player_vip = response.data.player_vip;
-          _this.tabnum = Object.keys(response.data.video.playlists)[0];
-          _this.plot_arr = response.data.video.plot_arr;
+          _this.player_jx = response.response.player_jx;
+          _this.playlists = response.response.video.playlists;
+          _this.player_label_arr = response.response.player_label_arr;
+          _this.player_vip = response.response.player_vip;
+          _this.tabnum = Object.keys(response.response.video.playlists)[0];
+          _this.plot_arr = response.response.video.plot_arr;
           // .replace("http:","https:").split("https://")
         });
       return _this.imgURL;
@@ -187,5 +202,4 @@ a {
 //   position: fixed;
 //   width: 23%;
 
-// }
-</style>
+// }</style>

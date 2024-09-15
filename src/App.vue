@@ -50,6 +50,4 @@ export default {
   width: 0 !important;
   height: 0;
 }
-
-
 </style>

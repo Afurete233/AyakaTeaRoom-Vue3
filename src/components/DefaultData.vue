@@ -30,9 +30,9 @@ const acg_type = [
   "黑名单",
   "正在看",
 ];
-// const age_api = "https://v2.age-api.com:8443/v2/";
+const age_api = "https://ageapi.omwjhz.com:18888/v2/";
 // const age_api = "http://mcmlqs.top:60011/api/";
-const age_api = "/api/";
+// const age_api = "/api/";
 
 const acg_web_url = {
   acgfun: "https://www.agemys.vip/",
@@ -108,13 +108,34 @@ import axios from "axios";
 
 const loadweek = function () {
   var _this = this;
-  axios
-    .get(age_api + "home-list", { headers: { "Content-Type": "*" } })
+  if (window.queryData === undefined) {
+    return;
+  }
+  window.queryData
+    (age_api + "home-list")
     .then((response) => {
-      _this.saveweeknew = response.data.week_list[new Date().getDay()];
+      _this.saveweeknew = response.response.week_list[new Date().getDay()];
 
     });
+  // axios
+  //   .get(age_api + "home-list", { headers: { "Content-Type": "*" } })
+  //   .then((response) => {
+  //     _this.saveweeknew = response.data.week_list[new Date().getDay()];
+
+  //   });
 };
+
+
+const callUnsafeWindowMethod = function () {
+  const interval = setInterval(async () => {
+    if (window.queryData !== undefined) {
+      clearInterval(interval);
+      console.log('unsafeWindow ok');
+    } else {
+      console.log('Waiting for method...');
+    }
+  }, 1000);
+}
 
 
 const loading_acg_url_json = function () {
@@ -129,7 +150,7 @@ const loading_acg_url_json = function () {
 }
 
 const loading_Notice = await axios
-  .get("/public/Notice.json")
+  .get("https://raw.githubusercontent.com/Afurete233/Ayaka_TeaRoom/main/Notice.json")
 
 const isNew = function (AID) {
   for (let index = 0; index < this.saveweeknew.length; index++) {
@@ -160,6 +181,7 @@ export default {
   saveweeknew: [],
   age_api,
   methods: {},
+  callUnsafeWindowMethod,
   mounted() {
 
   },

@@ -100,13 +100,40 @@ export default {
 
       _this.Search_word = keyword;
 
-      axios
-        .get(
-          DefaultData.age_api + "search?query=" +
-          _this.Search_word +
-          "&page=" +
-          _this.page
-        )
+      // axios
+      //   .get(
+      //     DefaultData.age_api + "search?query=" +
+      //     _this.Search_word +
+      //     "&page=" +
+      //     _this.page
+      //   )
+      //   .then((response) => {
+      //     if (response.data == "ipchk:操作太频繁 请稍后再试") {
+      //       _this.$message({
+      //         message: "操作太频繁 请稍后再试",
+      //         type: "warning",
+      //         duration: 1000,
+      //       });
+      //     }
+
+      //     _this.MAXnum = response.data.data.total;
+      //     _this.runstart(response.data.data.videos, 1);
+      //     setTimeout(function () {
+      //       _this.autoadd();
+      //       _this.setatag();
+      //     }, 500);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //     this.errored = true;
+      //   })
+      //   .finally(() => (this.loading = false));
+      window.queryData(
+        DefaultData.age_api + "search?query=" +
+        _this.Search_word +
+        "&page=" +
+        _this.page
+      )
         .then((response) => {
           if (response.data == "ipchk:操作太频繁 请稍后再试") {
             _this.$message({
@@ -116,8 +143,8 @@ export default {
             });
           }
 
-          _this.MAXnum = response.data.data.total;
-          _this.runstart(response.data.data.videos, 1);
+          _this.MAXnum = response.response.data.total;
+          _this.runstart(response.response.data.videos, 1);
           setTimeout(function () {
             _this.autoadd();
             _this.setatag();
@@ -315,16 +342,32 @@ export default {
       ) {
         var _this = this;
         this.page++;
-        axios
-          .get(
-            DefaultData.age_api + "search?query=" +
-            _this.Search_word +
-            "&page=" +
-            _this.page
-          )
+        // axios
+        //   .get(
+        //     DefaultData.age_api + "search?query=" +
+        //     _this.Search_word +
+        //     "&page=" +
+        //     _this.page
+        //   )
+        //   .then((response) => {
+        //     _this.MAXnum = response.data.data.total;
+        //     _this.runstart(response.data.data.videos, 1);
+        //     _this.sw = true;
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //     _this.errored = true;
+        //   })
+        //   .finally(() => (_this.loading = false));
+        window.queryData(
+          DefaultData.age_api + "search?query=" +
+          _this.Search_word +
+          "&page=" +
+          _this.page
+        )
           .then((response) => {
-            _this.MAXnum = response.data.data.total;
-            _this.runstart(response.data.data.videos, 1);
+            _this.MAXnum = response.response.data.total;
+            _this.runstart(response.response.data.videos, 1);
             _this.sw = true;
           })
           .catch((error) => {
@@ -374,8 +417,8 @@ export default {
 
             _this.page++;
             // console.log("ok--" + _this.page);
-            axios
-              .get(
+            window.queryData
+              (
                 DefaultData.age_api + "search?query=" +
                 _this.Search_word +
                 "&page=" +
@@ -383,8 +426,8 @@ export default {
               )
               .then((response) => {
                 // _this.showdata = _this.showdata.concat(response.data.AniPre);
-                _this.MAXnum = response.data.data.total;
-                _this.runstart(response.data.data.videos, 1);
+                _this.MAXnum = response.response.data.total;
+                _this.runstart(response.response.data.videos, 1);
                 _this.sw = true;
               })
               .catch((error) => {
@@ -392,6 +435,24 @@ export default {
                 _this.errored = true;
               })
               .finally(() => (_this.loading = false));
+            // axios
+            //   .get(
+            //     DefaultData.age_api + "search?query=" +
+            //     _this.Search_word +
+            //     "&page=" +
+            //     _this.page
+            //   )
+            //   .then((response) => {
+            //     // _this.showdata = _this.showdata.concat(response.data.AniPre);
+            //     _this.MAXnum = response.data.data.total;
+            //     _this.runstart(response.data.data.videos, 1);
+            //     _this.sw = true;
+            //   })
+            //   .catch((error) => {
+            //     console.log(error);
+            //     _this.errored = true;
+            //   })
+            //   .finally(() => (_this.loading = false));
 
             _this.sw = false;
           }

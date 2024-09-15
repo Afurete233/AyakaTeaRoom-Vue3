@@ -75,6 +75,12 @@
         </el-main>
       </el-container>
     </el-container>
+    <el-dialog title="未安装跨域插件" v-model="noCors" :modal-append-to-body='false' :destroy-on-close="true">
+      <a target="_blank"
+        href="https://greasyfork.org/zh-CN/scripts/505484-%E7%99%BD%E9%B7%BA%E8%B7%A8%E5%9F%9F%E5%8A%A9%E6%89%8B">
+        <el-button type="primary">前往安装</el-button>
+      </a>
+    </el-dialog>
   </div>
 </template>
 
@@ -96,6 +102,7 @@ export default {
       reload: true,
       bg_sw: true,
       contnum: 0,
+      noCors: false
     };
   },
   components: {
@@ -135,6 +142,10 @@ export default {
     },
   },
   mounted() {
+    if (window.queryData == undefined) {
+      this.noCors = true;
+      return;
+    }
     DefaultData.loadweek();
     DefaultData.loading_acg_url_json();
   },

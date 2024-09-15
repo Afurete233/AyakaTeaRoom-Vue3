@@ -77,6 +77,7 @@ export default {
       Tips_is: false,
       Tips_data: '',
       acgdata: {},
+      noCors: false,
       dialogacgweb: false,
       defalutLogoUrl: DefaultData.errorimg,
       josn_data: JSON,
@@ -273,24 +274,42 @@ export default {
       ) {
 
         this.page++;
-        axios.get
-          (
-            DefaultData.age_api +
-            _this.Data_type +
-            "?page=" +
-            _this.page +
-            "&size=20"
-          )
-          .then((response) => {
-            _this.MAXnum = response.data.total;
-            _this.runstart(response.data.videos, 1);
-            _this.sw = true;
-          })
+        window.queryData(
+          DefaultData.age_api +
+          _this.Data_type +
+          "?page=" +
+          _this.page +
+          "&size=20"
+        ).then((response) => {
+          _this.MAXnum = response.data.total;
+          _this.runstart(response.data.videos, 1);
+          _this.sw = true;
+        })
           .catch((error) => {
             console.log(error);
             _this.errored = true;
           })
           .finally(() => (_this.loading = false));
+
+
+        // axios.get
+        //   (
+        //     DefaultData.age_api +
+        //     _this.Data_type +
+        //     "?page=" +
+        //     _this.page +
+        //     "&size=20"
+        //   )
+        //   .then((response) => {
+        //     _this.MAXnum = response.data.total;
+        //     _this.runstart(response.data.videos, 1);
+        //     _this.sw = true;
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //     _this.errored = true;
+        //   })
+        //   .finally(() => (_this.loading = false));
       }
     },
     setatag() {
@@ -310,26 +329,43 @@ export default {
     },
   },
   mounted() {
-
-
-    // DefaultData.morejump("https://app.age-api.com:8443/v2/update?page=1&size=30");
+    if (window.queryData == undefined) {
+      return;
+    }
 
     var _this = this;
-    axios.get
-      (DefaultData.age_api + this.Data_type + "?page=1&size=20", { dataType: "application/text" })
-      .then((response) => {
-        this.MAXnum = response.data.total;
-        this.runstart(response.data.videos, 1);
-        setTimeout(function () {
-          _this.autoadd();
-          _this.setatag();
-        }, 500);
-      })
+    window.queryData(DefaultData.age_api + this.Data_type + "?page=1&size=20").then((res) => {
+      this.MAXnum = res.response.total;
+      this.runstart(res.response.videos, 1);
+      setTimeout(function () {
+        _this.autoadd();
+        _this.setatag();
+      }, 500);
+    })
       .catch((error) => {
         console.log(error);
         this.errored = true;
       })
       .finally(() => (this.loading = false));
+
+    // DefaultData.morejump("https://app.age-api.com:8443/v2/update?page=1&size=30");
+
+    // var _this = this;
+    // axios.get
+    //   (DefaultData.age_api + this.Data_type + "?page=1&size=20", { dataType: "application/text" })
+    //   .then((response) => {
+    //     this.MAXnum = response.data.total;
+    //     this.runstart(response.data.videos, 1);
+    //     setTimeout(function () {
+    //       _this.autoadd();
+    //       _this.setatag();
+    //     }, 500);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     this.errored = true;
+    //   })
+    //   .finally(() => (this.loading = false));
 
     window.onresize = () => {
       this.autoadd();
@@ -353,8 +389,8 @@ export default {
 
             _this.page++;
             // console.log("ok--" + _this.page);
-            axios
-              .get(
+            window.queryData
+              (
                 DefaultData.age_api +
                 _this.Data_type +
                 "?page=" +
@@ -363,8 +399,8 @@ export default {
               )
               .then((response) => {
                 // _this.showdata = _this.showdata.concat(response.data.AniPre);
-                _this.MAXnum = response.data.total;
-                _this.runstart(response.data.videos, 1);
+                _this.MAXnum = response.response.total;
+                _this.runstart(response.response.videos, 1);
                 _this.sw = true;
               })
               .catch((error) => {
@@ -372,6 +408,26 @@ export default {
                 _this.errored = true;
               })
               .finally(() => (_this.loading = false));
+
+            // axios
+            //   .get(
+            //     DefaultData.age_api +
+            //     _this.Data_type +
+            //     "?page=" +
+            //     _this.page +
+            //     "&size=20"
+            //   )
+            //   .then((response) => {
+            //     // _this.showdata = _this.showdata.concat(response.data.AniPre);
+            //     _this.MAXnum = response.data.total;
+            //     _this.runstart(response.data.videos, 1);
+            //     _this.sw = true;
+            //   })
+            //   .catch((error) => {
+            //     console.log(error);
+            //     _this.errored = true;
+            //   })
+            //   .finally(() => (_this.loading = false));
 
             _this.sw = false;
           }
